@@ -1,0 +1,14 @@
+D:\SE104\ChuongTrinhQuangLyKhachSan\ChuongTrinhQuangLyKhachSan\bin\Debug\ChuongTrinhQuangLyKhachSan.exe.config
+D:\SE104\ChuongTrinhQuangLyKhachSan\ChuongTrinhQuangLyKhachSan\bin\Debug\ChuongTrinhQuangLyKhachSan.exe
+D:\SE104\ChuongTrinhQuangLyKhachSan\ChuongTrinhQuangLyKhachSan\bin\Debug\ChuongTrinhQuangLyKhachSan.pdb
+D:\SE104\ChuongTrinhQuangLyKhachSan\ChuongTrinhQuangLyKhachSan\bin\Debug\Guna.UI2.dll
+D:\SE104\ChuongTrinhQuangLyKhachSan\ChuongTrinhQuangLyKhachSan\obj\Debug\ChuongTrinhQuangLyKhachSan.csproj.AssemblyReference.cache
+D:\SE104\ChuongTrinhQuangLyKhachSan\ChuongTrinhQuangLyKhachSan\obj\Debug\ChuongTrinhQuangLyKhachSan.Properties.Resources.resources
+D:\SE104\ChuongTrinhQuangLyKhachSan\ChuongTrinhQuangLyKhachSan\obj\Debug\ChuongTrinhQuangLyKhachSan.csproj.GenerateResource.cache
+D:\SE104\ChuongTrinhQuangLyKhachSan\ChuongTrinhQuangLyKhachSan\obj\Debug\ChuongTrinhQuangLyKhachSan.csproj.CoreCompileInputs.cache
+D:\SE104\ChuongTrinhQuangLyKhachSan\ChuongTrinhQuangLyKhachSan\obj\Debug\ChuongTr.74653E2C.Up2Date
+D:\SE104\ChuongTrinhQuangLyKhachSan\ChuongTrinhQuangLyKhachSan\obj\Debug\ChuongTrinhQuangLyKhachSan.exe
+D:\SE104\ChuongTrinhQuangLyKhachSan\ChuongTrinhQuangLyKhachSan\obj\Debug\ChuongTrinhQuangLyKhachSan.pdb
+D:\SE104\ChuongTrinhQuangLyKhachSan\ChuongTrinhQuangLyKhachSan\obj\Debug\ChuongTrinhQuangLyKhachSan.Dashboard.resources
+D:\SE104\ChuongTrinhQuangLyKhachSan\ChuongTrinhQuangLyKhachSan\obj\Debug\ChuongTrinhQuangLyKhachSan.Login.resources
+D:\SE104\ChuongTrinhQuangLyKhachSan\ChuongTrinhQuangLyKhachSan\obj\Debug\ChuongTrinhQuangLyKhachSan.All_User_Control.UC_AddRoom.resources
