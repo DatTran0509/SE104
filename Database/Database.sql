@@ -96,13 +96,16 @@ CREATE TABLE DICHVU (
 -- Tao bang THAMSO
 CREATE TABLE THAMSO (
 	SoLuongKhachToiDa tinyint,
-	GiaPhongLoaiA money,				-- Giá loại phòng A
-	GiaPhongLoaiB money,				-- Giá loại phòng B
-	GiaPhongLoaiC money,				-- Giá loại phòng C
-	GiaDichVuLoaiX money,				-- Giá loại dịch vụ X
-	GiaDichVuLoaiY money,				-- Giá loại dịch vụ Y
-	GiaDichVuLoaiZ money				-- Giá loại dịch vụ Z
-	TylePhuThu float
+	GiaPhongLoaiA float,				-- Giá loại phòng A
+	GiaPhongLoaiB float,				-- Giá loại phòng B
+	GiaPhongLoaiC float,				-- Giá loại phòng C
+	GiaDichVuLoai1 float,				-- Giá loại dịch vụ 1
+	GiaDichVuLoai2 float,				-- Giá loại dịch vụ 2
+	GiaDichVuLoai3 float,				-- Giá loại dịch vụ 3
+	GiaDichVuLoai4 float,				-- Giá loại dịch vụ 4
+	GiaDichVuLoai5 float,				-- Giá loại dịch vụ 5
+	TylePhuThu float,
+	HeSoPhuThuKhachNuocNgoai float
 )
 
-INSERT INTO THAMSO VALUES ('3','150000','170000','220000','50000','70000','100000','0.25');
+INSERT INTO THAMSO VALUES ('3','150000','170000','220000','10000','150000','100000','10000','50000','0.25','1.5');

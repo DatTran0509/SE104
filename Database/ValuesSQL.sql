@@ -41,11 +41,11 @@ VALUES ('LP01', 'A', 150000, N'Phòng loại A', 20),
        ('LP03', 'C', 200000, N'Phòng loại C', 10);
 
 
-INSERT INTO LOAIDICHVU VALUES('LDV1',N'Giặt ủi quần áo',N'<= 2kg: 40k, >2kg phụ thu thêm 25k/kg.','40000');
-INSERT INTO LOAIDICHVU VALUES('LDV2',N'Cho thuê xe máy',N'Chi phí thuê: 150k/ngày.','150000');
-INSERT INTO LOAIDICHVU VALUES('LDV3',N'Thu đổi ngoại tệ',N'Tối đa 10.000.000vnđ, thu phí 2%.','1000000');
-INSERT INTO LOAIDICHVU VALUES('LDV4',N'Đón khách',N'Miễn phí < 5km, > 6 km phụ thu 10.000/km','10000');
-INSERT INTO LOAIDICHVU VALUES('LDV5',N'Buffet sáng',N'Khung giờ phụ vụ: 6h30-9h30 mỗi ngày.','50000');
+INSERT INTO LOAIDICHVU VALUES('LDV1', N'Giặt ủi quần áo', N'Theo đơn giá trên 1 kg','10000');
+INSERT INTO LOAIDICHVU VALUES('LDV2', N'Cho thuê xe máy', N'Cho thuê xe máy theo ngày.', '150000');
+INSERT INTO LOAIDICHVU VALUES('LDV3', N'Thu đổi ngoại tệ', N'Tối đa 10.000.000vnđ, tính theo đơn giá cho 1 lần đổi.', '1000000');
+INSERT INTO LOAIDICHVU VALUES('LDV4', N'Đón khách', N'Miễn phí < 5km, > 6 km phụ thu theo đơn giá trên 1 km', '10000');
+INSERT INTO LOAIDICHVU VALUES('LDV5', N'Buffet sáng', N'Khung giờ phụ vụ: 6h30-9h30 mỗi ngày. Tính theo đơn giá trên 1 người', '50000');
 
 
 INSERT INTO NHANVIEN VALUES('NV1', N'Trần Quang Đạt', N'Nam', '22520236', '225202363@gmail.com', N'Thủ Đức', '05-09-2024 00:00:00', '5000000')
