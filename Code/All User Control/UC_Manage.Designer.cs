@@ -46,9 +46,9 @@
             this.guna2HtmlLabel3.Location = new System.Drawing.Point(166, 114);
             this.guna2HtmlLabel3.Margin = new System.Windows.Forms.Padding(2);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(76, 21);
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(157, 21);
             this.guna2HtmlLabel3.TabIndex = 5;
-            this.guna2HtmlLabel3.Text = "Loại dịch vụ";
+            this.guna2HtmlLabel3.Text = "Loại đơn giá cần thay đổi";
             // 
             // guna2HtmlLabel1
             // 
@@ -58,9 +58,9 @@
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(582, 114);
             this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(151, 21);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(78, 21);
             this.guna2HtmlLabel1.TabIndex = 6;
-            this.guna2HtmlLabel1.Text = "Đơn giá mới của dịch vụ";
+            this.guna2HtmlLabel1.Text = "Đơn giá mới";
             this.guna2HtmlLabel1.Click += new System.EventHandler(this.guna2HtmlLabel1_Click);
             // 
             // txtTypeService
@@ -143,9 +143,9 @@
             this.label1.Location = new System.Drawing.Point(36, 23);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(315, 32);
+            this.label1.Size = new System.Drawing.Size(231, 32);
             this.label1.TabIndex = 28;
-            this.label1.Text = "Tùy chỉnh đơn giá dịch vụ";
+            this.label1.Text = "Tùy chỉnh đơn giá ";
             // 
             // guna2Elipse1
             // 

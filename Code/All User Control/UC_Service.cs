@@ -85,62 +85,75 @@ namespace Code.All_user_control
                 String end = txtFinish.Text;
                 double price = 0;
                 string serviceno = "";
+                int numberday = CalNumberDate();
 
-                if (txtService.Text == "Giặt ủi quần áo")
+                if(numberday < 0)
                 {
-                     serviceno = "LDV1";
-                    
-                     int numberday = CalNumberDate();
-                     price = number*GiaDichVuLoai1 * numberday;
-                    
-                   
+                    MessageBox.Show("Vui lòng chọn ngày thuê dịch vụ phù hợp!", "Warning !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                if (txtService.Text == "Cho thuê xe máy")
+                else if(number<0)
                 {
-                    serviceno = "LDV2";
-                    int numberday = CalNumberDate();
-                    price = number * GiaDichVuLoai2 * numberday ;
-                }
-                if (txtService.Text == "Thu đổi ngoại tệ")
+                    MessageBox.Show("Vui lòng không chọn số lượng dịch vụ là số âm!", "Warning !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }    
+                else
                 {
-                    serviceno = "LDV3";
-                    price = number * GiaDichVuLoai3;
-                   
-                }
-                if (txtService.Text == "Đón khách")
-                {
-                    serviceno = "LDV4";
-                    if (number <= 5)
+               
+                    if (txtService.Text == "Giặt ủi quần áo")
                     {
-                        price = 0;
+                        serviceno = "LDV1";
+
+
+                        price = number * GiaDichVuLoai1 * numberday;
+
+
+                    }
+                    if (txtService.Text == "Cho thuê xe máy")
+                    {
+                        serviceno = "LDV2";
+
+                        price = number * GiaDichVuLoai2 * numberday;
+                    }
+                    if (txtService.Text == "Thu đổi ngoại tệ")
+                    {
+                        serviceno = "LDV3";
+                        price = number * GiaDichVuLoai3;
+
+                    }
+                    if (txtService.Text == "Đón khách")
+                    {
+                        serviceno = "LDV4";
+                        if (number <= 5)
+                        {
+                            price = 0;
+                        }
+                        else
+                        {
+
+                            price = (number - 5) * GiaDichVuLoai4 * numberday;
+                        }
+                    }
+                    if (txtService.Text == "Buffet sáng")
+                    {
+                        serviceno = "LDV5";
+
+                        price = number * GiaDichVuLoai5 * numberday;
+                    }
+
+                    string MATP = Find_MATP(name);
+
+                    if (MATP == "none")
+                    {
+                        MessageBox.Show("CMND Không hợp lệ. Vui lòng nhập lại thông tin", "Warning !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        clearAll();
                     }
                     else
                     {
-                        int numberday = CalNumberDate();
-                        price = (number - 5) * GiaDichVuLoai4 * numberday;
+                        query = "insert into DICHVU (MALDV, MATP, NGBATDAUDV, NGKETTHUCDV, SOLUONGDV, TONGTIENDV) values ('" + serviceno + "','" + MATP + "', CONVERT(DATETIME, '" + start + "', 103), CONVERT(DATETIME, '" + end + "', 103), " + number + ", " + price + ")";
+                        fn.setData(query, "Đã thuê dịch vụ thành công");
+
+                        UC_Service_Load(this, null);
+                        clearAll();
                     }
-                }
-                if (txtService.Text == "Buffet sáng")
-                {
-                    serviceno = "LDV5";
-                    int numberday = CalNumberDate();
-                    price = number * GiaDichVuLoai5 * numberday;
-                }
-
-                string MATP = Find_MATP(name);
-
-                if (MATP == "none")
-                {
-                    MessageBox.Show("Không hợp lệ. Vui lòng nhập lại thông tin", "Warning !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    clearAll();
-                }
-                else
-                {
-                    query = "insert into DICHVU (MALDV, MATP, NGBATDAUDV, NGKETTHUCDV, SOLUONGDV, TONGTIENDV) values ('" + serviceno + "','" + MATP + "', CONVERT(DATETIME, '" + start + "', 103), CONVERT(DATETIME, '" + end + "', 103), " + number + ", " + price + ")";
-                    fn.setData(query, "Đã thuê dịch vụ thành công");
-
-                    UC_Service_Load(this, null);
-                    clearAll();
                 }
 
             }

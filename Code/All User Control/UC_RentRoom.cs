@@ -249,9 +249,9 @@ namespace Code.All_user_control
             if (txtCusName.Text != "" && txtCusCMND.Text != "" && txtRoomType.Text != "" && txtRoomNo.Text != "" && txtCheckOut.Text != "" && txtCheckIn.Text != "" && txtNumberCus.Text != "")
             {
 
-                if (int.Parse(txtNumberCus.Text) > SoLuongKhachToiDa || int.Parse(txtNumberCus.Text) < 1)
+                if (int.Parse(txtNumberCus.Text) > SoLuongKhachToiDa || int.Parse(txtNumberCus.Text) < 1 )
                 {
-                    MessageBox.Show("Số lượng khách hàng không phù hợp. Vui lập nhập lại số lượng khách hàng", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Số lượng khách hàng không được vượt quá {SoLuongKhachToiDa} hoặc các giá trị không phù hợp như số âm. Vui lòng nhập lại số lượng khách hàng", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -323,62 +323,73 @@ namespace Code.All_user_control
 
                     int numberday = CalNumberDate();
 
-
-                    if (cusTypeCheck == true)
+                    if(numberday>0)
                     {
-                        if (numberCus > 2)
+                        if (cusTypeCheck == true)
                         {
-                            cusType = "Khách nước ngoài";
-                            totalPrice = price * HeSoPhuThuKhachNuocNgoai * numberday * TyLePhuThu;
+                            if (numberCus > 2)
+                            {
+                                cusType = "Khách nước ngoài";
+                                totalPrice = price * HeSoPhuThuKhachNuocNgoai * numberday * TyLePhuThu;
+                            }
+                            else
+                            {
+                                cusType = "Khách nước ngoài";
+                                totalPrice = price * HeSoPhuThuKhachNuocNgoai * numberday;
+                            }
+
                         }
                         else
                         {
-                            cusType = "Khách nước ngoài";
-                            totalPrice = price * HeSoPhuThuKhachNuocNgoai * numberday;
+                            if (numberCus > 2)
+                            {
+                                cusType = "Khách nội địa";
+                                totalPrice = price * numberday * TyLePhuThu;
+                            }
+                            else
+                            {
+                                cusType = "Khách nội địa";
+                                totalPrice = price * numberday;
+                            }
+
+                        }
+                        String RoomNo = "P" + txtRoomNo.Text;
+
+                        String queryRoomNoItems = "SELECT MAPH FROM PHONG, LOAIPHONG WHERE PHONG.MALPH = LOAIPHONG.MALPH AND PHONG.TRANGTHAI = N'Trống' AND LOAIPHONG.GHICHU = N'" + roomType + "'";
+                        bool result = CheckIfRoomExists(queryRoomNoItems, RoomNo);
+                        if (result == true)
+                        {
+                            maKH = increaseMAKH();
+                            maTP = increaseMATP();
+                            maHD = increaseMAHD();
+
+                            query = "insert into KHACHHANG (MAKH, HOTEN, GIOITINH, CMND, SDT, DIACHI, LOAIKH, EMAIL) values ('KH" + maKH + "', N'" + cusName + "', N'" + Sex + "','" + cmnd + "','" + phonenumber + "',N'" + addr + "',N'" + cusType + "','" + Email + "')";
+                            fn.setData(query, null);
+
+                            query = "insert into THUEPHONG (MATP, MAKH, MAPH, NGTHUE, NGTRAPHONG, TRANGTHAI, SOLUONGKH) values ('TP" + maTP + "','KH" + maKH + "','" + RoomNo + "', CONVERT(DATETIME, '" + start + "', 103), CONVERT(DATETIME, '" + end + "', 103), N'Chưa thanh toán', " + numberCus + ")";
+                            fn.setData(query, null);
+
+                            query = "insert into HOADON (MAHD, TONGTIEN, MATP) values ('HD" + maHD + "', '" + totalPrice + "', 'TP" + maTP + "')";
+                            fn.setData(query, "Đã lưu phiếu thuê phòng thành công");
+
+                            query = "update PHONG set TRANGTHAI = N'Không trống' where MAPH = '" + RoomNo + "';";
+                            fn.setData(query, null);
+
+                            clearAll();
+                        }
+                        else
+                        {
+                            float tmp_RoomNo = int.Parse(txtRoomNo.Text);
+                            MessageBox.Show($"Phòng {tmp_RoomNo} không thể chọn!", "Warning !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
 
                     }
                     else
                     {
-                        if (numberCus > 2)
-                        {
-                            cusType = "Khách nội địa";
-                            totalPrice = price * numberday * TyLePhuThu;
-                        }
-                        else
-                        {
-                            cusType = "Khách nội địa";
-                            totalPrice = price * numberday;
-                        }
-
+                        MessageBox.Show($"Vui lòng chọn ngày Check Out sau ngày Check In!", "Warning !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
-                    String RoomNo ="P" + txtRoomNo.Text;
-                    String queryRoomNoItems = "SELECT MAPH FROM PHONG, LOAIPHONG WHERE PHONG.MALPH = LOAIPHONG.MALPH AND PHONG.TRANGTHAI = N'Trống' AND LOAIPHONG.GHICHU = N'" + roomType + "'";
-                    bool result = CheckIfRoomExists(queryRoomNoItems, RoomNo);
-                    if (result == true)
-                    {
-                        maKH = increaseMAKH();
-                        maTP = increaseMATP();
-                        maHD = increaseMAHD();
-
-                        query = "insert into KHACHHANG (MAKH, HOTEN, GIOITINH, CMND, SDT, DIACHI, LOAIKH, EMAIL) values ('KH" + maKH + "', N'" + cusName + "', N'" + Sex + "','" + cmnd + "','" + phonenumber + "',N'" + addr + "',N'" + cusType + "','" + Email + "')";
-                        fn.setData(query, null);
-
-                        query = "insert into THUEPHONG (MATP, MAKH, MAPH, NGTHUE, NGTRAPHONG, TRANGTHAI, SOLUONGKH) values ('TP" + maTP + "','KH" + maKH + "','" + RoomNo + "', CONVERT(DATETIME, '" + start + "', 103), CONVERT(DATETIME, '" + end + "', 103), N'Chưa thanh toán', " + numberCus + ")";
-                        fn.setData(query, null);
-
-                        query = "insert into HOADON (MAHD, TONGTIEN, MATP) values ('HD" + maHD + "', '" + totalPrice + "', 'TP" + maTP + "')";
-                        fn.setData(query, "Đã lưu phiếu thuê phòng thành công");
-
-                        query = "update PHONG set TRANGTHAI = N'Không trống' where MAPH = '" + RoomNo + "';";
-                        fn.setData(query, null);
-
-                        clearAll();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Phòng không thể chọn!", "Warning !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
+                    
+                    
                 }
             }
             else
