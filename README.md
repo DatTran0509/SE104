@@ -1,19 +1,22 @@
+<!-- Banner -->
 <p align="center">
   <a href="https://www.uit.edu.vn/" title="Trường Đại học Công nghệ Thông tin" style="border: none;">
     <img src="https://i.imgur.com/WmMnSRt.png" alt="Trường Đại học Công nghệ Thông tin | University of Information Technology" width="150">
   </a>
 </p>
 
-<h1 align="center"><b>BÁO CÁO ĐỒ ÁN</b></h1>
+<h1 align="center"><b>NHẬP MÔN CÔNG NGHỆ PHẦN MỀM</b></h1>
 
-<h3 align="center">MÔN HỌC: NHẬP MÔN CÔNG NGHỆ PHẦN MỀM</h3>
+---
 
-<h4 align="center">ĐỀ TÀI: <b>PHẦN MỀM QUẢN LÝ KHÁCH SẠN</b></h4>
+<h2 align="center"><b>ĐỒ ÁN CUỐI KÌ</b></h2>
+
+<p align="center"><i>Phần mềm quản lý khách sạn</i></p>
 
 ---
 
 ### Giảng viên hướng dẫn:
-**TS. Đỗ Thị Thanh Tuyền**
+- **TS. Đỗ Thị Thanh Tuyền**
 
 ### Sinh viên thực hiện:
 - **Trần Quang Đạt** – 22520236  
@@ -23,12 +26,13 @@
 
 ---
 
-### Nhóm: 7  
-### Lớp: SE104.P11  
+<p align="center">
+  <b>ĐẠI HỌC QUỐC GIA THÀNH PHỐ HỒ CHÍ MINH</b><br>
+  <b>ĐẠI HỌC CÔNG NGHỆ THÔNG TIN</b>
+</p>
 
 ---
 
 <p align="center">
-  <b>ĐẠI HỌC QUỐC GIA THÀNH PHỐ HỒ CHÍ MINH</b><br>
-  <b>ĐẠI HỌC CÔNG NGHỆ THÔNG TIN</b>
+  <i><b>Copyright © 2025 - Nhóm 7, SE104.P11</b></i>
 </p>
