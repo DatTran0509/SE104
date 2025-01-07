@@ -26,7 +26,6 @@
 
 <p align="center">
 🎥 [**Hướng dẫn tải code và sử dụng trên máy tính mới**](https://drive.google.com/drive/folders/1X5PliYWBBoFvB3vOYhH2An4Iou0McUqH)  
-(Click vào link để xem video chi tiết)
 </p>
 
 ---
